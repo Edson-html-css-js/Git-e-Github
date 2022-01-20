@@ -1,0 +1,139 @@
+ 
+git branch -d task-MDM-1278  = comando para apagar uma branch
+
+ git checkout -b bug-MDM-1296  = comando para criar uma branch e já ir pra ela
+
+
+ git stash = comando para descartar mudanças no codigo
+
+
+ git checkout bug-MDM-1219  = esse comando e pra você ir para a branch que vc qer é só mudar o final
+
+git push origin bug-MDM-1389>> pra mandar o commit pro gilab
+
+git commit --amend >> comando para editar um commit antes de ter dado push
+
+git branch -d nome-da-branch     =   Para remover uma branch (ramo) local no Git, basta rodar o seguinte comando:
+
+git branch -D development    =   forcar delete
+
+git branch --list = mostra en qual branch você está
+
+git log = mostra os commits foran feitos
+
+
+git add . = adiciona as alterações feitas
+
+git commit -am "message" = comando para adicionar alterações e commitar com a mensagem que você quer!
+
+
+git branch -D master = apaga a master no seu repositorio local
+
+git merge (nome da branch) = pra pegar alterações da branch desejada, se der conflito, resolver no tortoise, e dar git push
+
+git push = pra mandar o commit para o repositorio remoto(GITLAB)
+
+git log -p = Mostra as alterações que foram realizadas
+
+
+git config --local user.name "Seu nome aqui"
+git config --local user.email "seu@email.aqui"
+
+Alternativa correta! O "git init" inicializa um repositório no diretório em que o comando for executado. A partir deste comando, o Git poderá gerenciar as modificações realizadas nos arquivos.
+
+
+git config --global core.autocrlf true
+
+git push -u origin/task-MDM-1278    =    antes de dar commit dar esse comando, isso se a task ainda não estiver criada no gitlab,se já estiver criada só dar o git push.
+Tenta assim: git push -u origin bug-MDM-1296
+Ao invés de -> git push -u origin/bug-MDM-1296
+
+
+Você vai criar o branch que você vai trabalhar encima desse padrão aí
+
+  us  = diz que você está traabalhando em uma história
+  mdm-1313  = ticket da história
+  task  = ta indicando que é uma tarefa, se for bug, ao invés de task, você coloca bug
+  mdm-1315  = ticket da tarefa
+
+
+api/select/customers?page=1&per_page=50&order=name&type=asc
+
+api/devices/effectiveness/all?dateStart=2021-06-10&dateFinish=2021-07-18
+-----------------------------------------------------------------------------------------------------
+Já sabemos como trazer o trabalho de outra branch e unir com a branch atual. Conhecemos duas formas de fazer isso: merge e rebase.
+
+Neste cenário, qual a diferença entre os comandos rebase e merge?
+
+R:O merge junta os trabalhos e gera um merge commit. O rebase aplica os commits de outra branch na branch atual.
+
+Alternativa correta! Com isso, evitamos os commits de merge. Há uma longa discussão sobre o que é "melhor": rebase ou merge. Estude, pesquise, 
+e tire suas próprias conclusões. Aqui tem um artigo (de milhares outros) que cita o assunto: https://medium.com/datadriveninvestor/git-rebase-vs-merge-cc5199edd77c.
+-----------------------------------------------------------------------------------------------------
+    Voltando commit, se eu já dei o git add ., mais ainda não commitei, e quero desfaser isso dou o seginte comando abaixo.
+ 
+   git reset HEAD index.html
+
+Se eu modificar o codigo e des ctr+s, mais quero desfaser dou o seguinte comando abaixo
+
+   git checkout -- index.html 
+
+   Desfazendo o commit depois de eu ter dado o comando git commit -m "string", veja abaixo.
+
+1. dou um git log, veijo o numerro do hash dele, copio esse hash, e dou o seginte comando abaixo
+
+  git revert d0d5c2f272303caf7d869327bfb49086d60d4e9d
+-----------------------------------------------------------------------------------------------------
+  guardando uma alteração em um local tenporario, para mexer nessa parte do codigo depois,
+ai eu modifico onde eu quero, não dou um git add ., e nen comito, dou o seguinte comando abaixo.
+
+  git stash    = ai o codigo vai ficar guardado la até quando eu quiser chamar ele devolta
+
+  git stash pop   = eu chamo essa parte do codigo que guardei e ja apago ele de onde fica guardado
+
+  git stash list   = eu veijo os meus codigos que estão gurdados lá
+-----------------------------------------------------------------------------------------------------
+	Navegando até um commit passado e trabalhar no codigo na quele estado
+
+  git log --oneline   = você ve os commites e escolhe pra qual você quer ir, só copiar o hash
+
+
+  git checkout 40163af   = vou para o estado que estava quando fiz esse commit, poren se eu fizer alterações sem criar uma branch apartir desse hash
+essas alterações não poderão ser encontradas pois, estara desanexado do seu controle de verções.
+-----------------------------------------------------------------------------------------------------
+	Ver diferença entre commits 
+
+  git log --oneline   = escolha qual commit quer comparar e copie o hash
+
+  git diff 983466d..40163af   = Ele pegara esse primeiro commit 983466d e quando eu passo .. estou falando até tal commit 40163af
+
+  git diff   = Quando você salva o codigo, e quer saber quais são as alterações, isso antes de dar o git add .
+
+ -----------------------------------------------------------------------------------------------------
+
+
+  git log -n 2 = Mostra os 2 ultimos commits
+
+------------------------------------------------------------------------
+	Gerando uma vesão do codigo
+
+  git tag -a v0.1.0 -m "Lançando a primeira versão (BETA) da aplicação de cursos"    =  Essa mensagen é opcional
+
+  git tag  = Ele mostra todas as tags que tem disponivel, ou seja as verções
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
